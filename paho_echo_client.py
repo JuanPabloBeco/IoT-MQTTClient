@@ -1,4 +1,10 @@
 import paho.mqtt.client as mqtt
+import settings
+
+import os
+BROKER_IP_OR_URL = os.getenv("BROKER_IP_OR_URL")
+
+print(BROKER_IP_OR_URL)
 
 # When server echoes a message always add serverPrefix at the start
 SERVER_PREFIX = "echo-"
@@ -6,9 +12,6 @@ TOPICS_TO_LISTEN = [
     "test1",
     "test2"
 ]
-
-#BROKER_IP_OR_URL = "52.26.212.38" #AWS MQTT Server Oregon
-BROKER_IP_OR_URL = "18.228.161.6" #AWS MQTT Server Sao Paulo
 
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):

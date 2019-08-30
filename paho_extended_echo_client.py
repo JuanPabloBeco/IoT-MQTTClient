@@ -1,4 +1,8 @@
 import paho.mqtt.client as mqtt
+import settings
+
+import os
+BROKER_IP_OR_URL = os.getenv("BROKER_IP_OR_URL")
 
 # When server echoes a message always add serverPrefix at the start
 SERVER_PREFIX = "echo-"
@@ -7,9 +11,6 @@ TOPICS_TO_LISTEN = [
     "test2"
 ]
 TOPIC_TO_SEND_INCOMING_MESSAGE_LENGHT = "message_lenght"
-
-#BROKER_IP_OR_URL = "52.26.212.38" #AWS MQTT Server Oregon
-BROKER_IP_OR_URL = "18.228.161.6" #AWS MQTT Server Sao Paulo
 
 SERVER_ONLINE_TOPIC = "server_topic"
 SERVER_ONLINE_MESSAGE = "Hi!"
